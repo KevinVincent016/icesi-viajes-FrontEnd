@@ -32,7 +32,7 @@ function MainScreen() {
           </div>
         </div>
       </div>
-      {/* Los otros cuadrantes irían aquí */}
+      {}
     </div>
   );
 }

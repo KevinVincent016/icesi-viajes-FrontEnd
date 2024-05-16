@@ -11,7 +11,7 @@ function App() {
   return (
     <Router>
       <div>
-        <Navbar /> {/* Aquí se utiliza el componente Navbar */}
+        <Navbar /> 
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/" element={<Login />} />

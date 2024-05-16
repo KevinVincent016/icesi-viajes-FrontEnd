@@ -29,7 +29,7 @@ function Navbar() {
           <div className="menu-container">
             <ul className="menu">
               <li><Link to="/" className="inicio">Inicio</Link></li>
-              <li className="dropdown-parent"> {/* Cambia la clase a dropdown-parent */}
+              <li className="dropdown-parent"> 
                 <span className="planes">Planes</span>
                 <div className="submenu">
                   <Link to="/ver-planes" className="nav-link">Ver Planes</Link>

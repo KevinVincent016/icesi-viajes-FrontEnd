@@ -37,7 +37,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center; /* Centra el texto dentro del contenedor */
+  text-align: center; 
 }
 
 .logo-container {
@@ -171,16 +171,15 @@
 }
 
 /*MainScreen.css*/
-/* Main.css */
 .plan-title {
-  font-family: 'Montserrat', sans-serif; /* Utiliza la fuente Montserrat */
-  font-size: 40px; /* Tamaño de la fuente */
+  font-family: 'Montserrat', sans-serif; 
+  font-size: 40px; 
   margin-bottom: 80px;
   margin-left: 4%; 
 }
 .main-container {
 
-  padding-top: 70px; /* Espacio en la parte superior para bajar el contenido */
+  padding-top: 70px; 
   display: flex;
   width: 100vw;
   height: 500vh;
@@ -188,7 +187,7 @@
   
 }
 .recently {
-  display: block; /* Hace que el span aparezca en una línea separada */
+  display: block;
 }
 
 .left-quadrant {
@@ -199,15 +198,15 @@
 
 .recent-plans {
   display: flex;
-  justify-content: center; /* Centrar horizontalmente */
-  gap: 40px; /* Añadir espaciado entre los cuadrados */
+  justify-content: center; 
+  gap: 40px; 
   position: center;
   
 }
 .plan-container {
-  position: relative; /* Establece el contenedor como posición relativa */
-  width: 100%; /* Ancho completo del contenedor */
-  height: 500vh; /* Altura total de la pantalla */
+  position: relative; 
+  width: 100%;
+  height: 500vh;
 }
 
 .plan {
@@ -216,8 +215,8 @@
   background-size: cover;
   background-position: center;
   position: relative;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); /* Sombra negra */
-  border: 1px solid black; /* Borde delgado negro */
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); 
+  border: 1px solid black;
   overflow: hidden;
   
 }
@@ -230,7 +229,7 @@
 .plan-details {
   position: absolute;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+  background-color: rgba(0, 0, 0, 0.5); 
   color: white;
   padding: 10px;
   width: 100%;
@@ -264,4 +263,21 @@
   font-size: 16px;
   margin-bottom: 5px;
 }
+.faq-item {
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.faq-item.open {
+  max-height: 500px; 
+}
+
+.faq-item p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+.faq-title {
+  font-size: 24px; 
+}
+
 
