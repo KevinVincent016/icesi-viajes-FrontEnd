@@ -16,9 +16,9 @@ function Login() {
       <div className="login-container">
         <h1>Bienvenido</h1>
         <form>
-          <input type="text" placeholder="Usuario" />
-          <input type="password" placeholder="Contraseña" />
-          <button type="button" onClick={handleLogin}>Iniciar sesión</button>
+        <input className="login-input" type="text" placeholder="Usuario" />
+          <input className="login-input" type="password" placeholder="Contraseña" />
+          <button className="login-button" type="button" onClick={handleLogin}>Iniciar sesión</button>
         </form>
       </div>
     </div>

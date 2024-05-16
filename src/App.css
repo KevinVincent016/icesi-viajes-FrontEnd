@@ -17,7 +17,6 @@
   cursor: pointer;
   font-weight: bold;
   margin-right: 20px; 
-
 }
 
 .App {
@@ -35,6 +34,10 @@
   border-radius: 8px;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
   flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* Centra el texto dentro del contenedor */
 }
 
 .logo-container {
@@ -43,33 +46,222 @@
   margin-right: 20px; 
 }
 
-
 .login-container form input {
-  margin-top: -30px;
-  margin-bottom: 40px; 
-  flex-direction: column;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
 
+.login-container form button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
-.login-container form {
-  display: flex;
-  flex-direction: column; 
+
+.login-container form button:hover {
+  background-color: #0056b3;
 }
+
 .login-container h1 {
-  margin-top: -40px;
+  margin-top: 20px;
   margin-bottom: 50px; 
   font-size: 60px; 
-  flex-direction: column;
+}
+.login-container form input:hover {
+  border-color: #999; 
+  border-width: 3px;
 }
 .company-name {
-
   margin-left: 20px;
-  color: white;
+  color: white; 
   align-items: center;
   font-weight: bold;
 }
 
-body {
+
+/*navbar*/
+/* Navbar.css */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 8px;
   font-family: 'Montserrat', sans-serif;
 }
 
+.logo {
+  width: 80px;
+  height: auto;
+}
+
+.company-name,
+.nav-link,
+.help-button,
+.inicio,
+.planes {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.inicio {
+  margin-right: 10px;
+}
+
+.planes {
+  margin-right: 10px;
+}
+
+.menu-container {
+  position: relative;
+}
+
+.menu-btn {
+  cursor: pointer;
+  color: white;
+  font-size: 24px;
+  padding: 0 20px;
+}
+
+.menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.menu li {
+  padding: 0 10px;
+  position: relative;
+}
+
+.dropdown-parent:hover .submenu {
+  display: block;
+}
+
+.menu .submenu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 2px);
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.menu .submenu a {
+  display: block;
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+}
+
+.menu .submenu a:hover {
+  background-color: #f0f0f0;
+}
+
+/*MainScreen.css*/
+/* Main.css */
+.plan-title {
+  font-family: 'Montserrat', sans-serif; /* Utiliza la fuente Montserrat */
+  font-size: 40px; /* Tamaño de la fuente */
+  margin-bottom: 80px;
+  margin-left: 4%; 
+}
+.main-container {
+
+  padding-top: 70px; /* Espacio en la parte superior para bajar el contenido */
+  display: flex;
+  width: 100vw;
+  height: 500vh;
+  background-color: #f0f0f0;
+  
+}
+.recently {
+  display: block; /* Hace que el span aparezca en una línea separada */
+}
+
+.left-quadrant {
+  flex: 1;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.recent-plans {
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  gap: 40px; /* Añadir espaciado entre los cuadrados */
+  position: center;
+  
+}
+.plan-container {
+  position: relative; /* Establece el contenedor como posición relativa */
+  width: 100%; /* Ancho completo del contenedor */
+  height: 500vh; /* Altura total de la pantalla */
+}
+
+.plan {
+  top: 60%;
+  width: 400px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); /* Sombra negra */
+  border: 1px solid black; /* Borde delgado negro */
+  overflow: hidden;
+  
+}
+
+.plan img {
+  width: 100%;
+  height: auto;
+}
+
+.plan-details {
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+  color: white;
+  padding: 10px;
+  width: 100%;
+  text-align: justify;
+
+}
+
+.plan-details h3,
+.plan-details p {
+  margin: 5px 0;
+}
+
+
+/*HelpPage.css pa no confundirlos xd*/
+.help-page {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+.help-page h2 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.help-page p {
+  color: #555;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
 
