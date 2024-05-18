@@ -19,7 +19,7 @@ function Login() {
       [name]: value,
     }));
   };
-
+ 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
@@ -32,7 +32,7 @@ function Login() {
       localStorage.setItem('token', usuario.token);
 
       // Redirigir al usuario a la pantalla de inicio
-      navigate('/home');
+      navigate('/main');
     } catch (error) {
       console.error('Error de inicio de sesión:', error);
       if (error.response && error.response.status === 401) {
@@ -48,26 +48,31 @@ function Login() {
   return (
     <div className="App" style={{ backgroundImage: `url(${backgroundImage})` }}>
       <div className="login-container">
-        <h1>Bienvenido</h1>
-        <form onSubmit={handleLogin}>
-          <input
-            className="login-input"
-            type="text"
-            name="login"
-            value={loginData.login}
-            onChange={handleChange}
-            placeholder="Usuario"
-          />
-          <input
-            className="login-input"
-            type="password"
-            name="password"
-            value={loginData.password}
-            onChange={handleChange}
-            placeholder="Contraseña"
-          />
-          <button className="login-button" type="submit">Iniciar sesión</button>
-        </form>
+        <div className="login-message">
+          <h1>Bienvenido</h1>
+          <label>{message}</label>
+        </div>
+        <div className="login-form">
+          <form onSubmit={handleLogin}>
+              <input
+                className="login-input"
+                type="text"
+                name="login"
+                value={loginData.login}
+                onChange={handleChange}
+                placeholder="Usuario"
+              />
+              <input
+                className="login-input"
+                type="password"
+                name="password"
+                value={loginData.password}
+                onChange={handleChange}
+                placeholder="Contraseña"
+              />
+              <button className="login-button" type="submit">Iniciar sesión</button>
+            </form>
+        </div>
       </div>
     </div>
   );
