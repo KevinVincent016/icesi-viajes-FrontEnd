@@ -75,10 +75,11 @@
   margin-bottom: 50px; 
   font-size: 60px; 
 }
+
 .login-container form input:hover {
-  border-color: #999; 
-  border-width: 3px;
+  outline: 3px solid #999; 
 }
+
 .company-name {
   margin-left: 20px;
   color: white; 
@@ -107,7 +108,9 @@
 .nav-link,
 .help-button,
 .inicio,
-.planes {
+.planes,
+.destinos,
+.usuarios {
   color: white;
   font-family: 'Montserrat', sans-serif;
   text-decoration: none;
@@ -119,6 +122,14 @@
 }
 
 .planes {
+  margin-right: 10px;
+}
+
+.destinos {
+  margin-right: 10px;
+}
+
+.usuarios {
   margin-right: 10px;
 }
 

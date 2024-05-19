@@ -18,6 +18,7 @@ function Login() {
       ...prevState,
       [name]: value,
     }));
+    setMessage('');
   };
  
   const handleLogin = async (e) => {
@@ -28,11 +29,26 @@ function Login() {
       const usuario = response.data;
       console.log('Usuario autenticado:', usuario);
 
-      // Almacenar el token de autenticación en el localStorage
-      localStorage.setItem('token', usuario.token);
+      localStorage.setItem('token', JSON.stringify(usuario));
+      console.log('token: ', localStorage.getItem('token'))
+      
+      /*
+      1 = Admin
+      2 = Viewer
+      3 = Agente
+      */
 
-      // Redirigir al usuario a la pantalla de inicio
-      navigate('/main');
+      if(usuario.idRol === "1"){
+        console.log('validacion: ', usuario.idRol)
+        navigate('/main');
+      }else if(usuario.idRol === "2"){
+        console.log('validacion: ', usuario.idRol)
+        navigate('/mainV');
+      }else{
+        console.log('validacion: ', usuario.idRol)
+        navigate('/mainA');
+      }
+      
     } catch (error) {
       console.error('Error de inicio de sesión:', error);
       if (error.response && error.response.status === 401) {
@@ -50,7 +66,7 @@ function Login() {
       <div className="login-container">
         <div className="login-message">
           <h1>Bienvenido</h1>
-          <label>{message}</label>
+          {message && <p style={{color: 'red', fontWeight: 'bold'}}>{message}</p>}
         </div>
         <div className="login-form">
           <form onSubmit={handleLogin}>
