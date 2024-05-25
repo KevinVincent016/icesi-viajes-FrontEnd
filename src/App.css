@@ -90,6 +90,15 @@
 
 /*navbar*/
 /* Navbar.css */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; 
+  background-color: #ffffff; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  padding: 10px 20px;
+}
 .header {
   display: flex;
   justify-content: space-between;
@@ -97,6 +106,7 @@
   background-color: #333;
   padding: 8px;
   font-family: 'Montserrat', sans-serif;
+  
 }
 
 .logo {
@@ -181,22 +191,22 @@
   background-color: #f0f0f0;
 }
 
-/*MainScreen.css*/
+/* MainScreen.css */
 .plan-title {
   font-family: 'Montserrat', sans-serif; 
   font-size: 40px; 
   margin-bottom: 80px;
   margin-left: 4%; 
 }
-.main-container {
 
+.main-container {
   padding-top: 70px; 
   display: flex;
   width: 100vw;
-  height: 500vh;
+  height: 100vh;
   background-color: #f0f0f0;
-  
 }
+
 .recently {
   display: block;
 }
@@ -211,25 +221,17 @@
   display: flex;
   justify-content: center; 
   gap: 40px; 
-  position: center;
-  
-}
-.plan-container {
-  position: relative; 
-  width: 100%;
-  height: 500vh;
 }
 
 .plan {
-  top: 60%;
+  position: relative; 
   width: 400px;
+  height: 300px;
   background-size: cover;
   background-position: center;
-  position: relative;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); 
   border: 1px solid black;
   overflow: hidden;
-  
 }
 
 .plan img {
@@ -245,7 +247,6 @@
   padding: 10px;
   width: 100%;
   text-align: justify;
-
 }
 
 .plan-details h3,
@@ -253,8 +254,41 @@
   margin: 5px 0;
 }
 
+.plan-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
 
-/*HelpPage.css pa no confundirlos xd*/
+.plan:hover .plan-overlay {
+  opacity: 1;
+}
+
+.select-button {
+  padding: 10px 20px;
+  background-color: #FF0000; 
+  color: white;
+  border: none;
+  border-radius: 25px; 
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease; 
+  font-weight: bold;
+}
+
+.select-button:hover {
+  background-color: #FFD700; 
+  transform: scale(1.1);
+}
+
+/* HelpPage.css */
 .help-page {
   background-color: #f0f0f0;
   padding: 20px;
@@ -274,6 +308,7 @@
   font-size: 16px;
   margin-bottom: 5px;
 }
+
 .faq-item {
   overflow: hidden;
   transition: max-height 0.3s ease;
@@ -287,8 +322,250 @@
   margin-top: 0;
   margin-bottom: 10px;
 }
+
 .faq-title {
   font-size: 24px; 
 }
+/*CreateUser.css*/
+.create-user-container {
+  display: flex;
+  height: 100vh;
+  z-index: 1; 
 
+}
+
+.fixed-left {
+  width: 45%;
+  padding: 20px;
+  background-color: #f0f0f0;
+  position: fixed;
+  height: 100vh;
+  overflow: auto;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.fixed-left h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.fixed-left p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.scrollable-right {
+  width: 50%;
+  margin-left: 50%;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.create-user-form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+}
+
+.form-group input,
+.form-group select {
+  width: calc(100% - 20px);
+  
+  padding: 10px;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f0ad4e;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #ec971f;
+}
+/* AddPlanScreen.css */
+/*AddPlanScreen.css*/
+
+.add-plan-container {
+  display: flex;
+  height: 100vh;
+  z-index: 1; 
+}
+
+.fixed-left {
+  width: 45%;
+  padding: 20px;
+  background-color: #f0f0f0;
+  position: fixed;
+  height: 100vh;
+  overflow: auto;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.fixed-left h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.fixed-left p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.scrollable-right {
+  width: 50%;
+  margin-left: 50%;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.add-plan-form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+}
+
+.form-group input,
+.form-group select {
+  width: calc(100% - 20px);
+  padding: 10px;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f0ad4e;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #ec971f;
+}
+/* AddDestinationScreen.css */
+
+.create-user-container {
+  display: flex;
+  height: 100vh;
+  z-index: 1; 
+}
+
+.fixed-left {
+  width: 45%;
+  padding: 20px;
+  background-color: #f0f0f0;
+  position: fixed;
+  height: 100vh;
+  overflow: auto;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.fixed-left h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.fixed-left p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.scrollable-right {
+  width: 50%;
+  margin-left: 50%;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.create-user-form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: calc(100% - 20px);
+  padding: 10px;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
+/* Estilo para q en los botones hagan la transicion de color*/
+
+button[type="submit"] {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f0ad4e; 
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s; 
+}
+
+button[type="submit"]:hover {
+  background-color: #ec1f1f; 
+}
 
