@@ -1,4 +1,3 @@
-// Navbar.js
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import logo from '../image-removebg-preview (1).png';
@@ -10,7 +9,6 @@ function Navbar() {
     localStorage.removeItem('token')
   };
 
-  // Obtener y deserializar el token del localStorage
   const token = localStorage.getItem('token');
   let user = null;
 
@@ -19,8 +17,6 @@ function Navbar() {
       user = JSON.parse(token);
     } catch (error) {
       console.error("Error parsing token:", error);
-      // Manejar el error, por ejemplo, eliminando el token inválido
-      localStorage.removeItem('token');
     }
   }
 
@@ -46,7 +42,7 @@ function Navbar() {
           </div>
           <div className="menu-container">
             <ul className="menu">
-            {user && user.idRol === '1' && (
+            {user && user.idRol === 1 && (
                     <>
                       <li><Link to="/main" className="inicio">Inicio</Link></li>
                       <li className="dropdown-parent"> 
@@ -77,18 +73,18 @@ function Navbar() {
                       <li><Link to="/" className="nav-link" onClick={handleLogout}>Logout</Link></li>
                     </>
                   )}
-            {user && user.idRol === '2' && (
+            {user && user.idRol === 2 && (
                     <>
-                      <li><Link to="/mainV" className="inicio">Inicio</Link></li>
+                      <li><Link to="/main" className="inicio">Inicio</Link></li>
                       <li><Link to="/ver-planes" className="planes">Ver planes</Link></li>
                       <li><Link to="/ver-destinos" className="nav-link">Ver destinos</Link></li>
                       <li><Link to="/ayuda" className="help-button">Ayuda</Link></li>
                       <li><Link to="/" className="nav-link" onClick={handleLogout}>Logout</Link></li>
                     </>
                   )}
-            {user && user.idRol === '3' && (
+            {user && user.idRol === 3 && (
                     <>
-                      <li><Link to="/mainA" className="inicio">Inicio</Link></li>
+                      <li><Link to="/main" className="inicio">Inicio</Link></li>
                       <li className="dropdown-parent"> 
                       <span className="planes">Planes</span>
                         <div className="submenu">

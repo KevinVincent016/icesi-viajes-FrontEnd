@@ -1,0 +1,87 @@
+.plan-card {
+  position: relative; 
+  width: 400px;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); 
+  border: 1px solid black;
+  overflow: hidden;
+}
+
+.plan-card img {
+  width: 100%;
+  height: 300px;
+}
+
+.plan-details {
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); 
+  color: white;
+  padding: 10px;
+  width: 100%;
+  text-align: justify;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.plan-details h3,
+.plan-details p {
+  margin: 5px 0;
+}
+
+.plan-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.plan-card:hover .plan-overlay {
+  opacity: 1;
+}
+
+.plan-card-select-button {
+  padding: 10px 20px;
+  background-color: #FF0000; 
+  color: white;
+  border: none;
+  border-radius: 25px; 
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease; 
+  font-weight: bold;
+}
+
+.plan-card-select-button:hover {
+  background-color: #FFD700; 
+  transform: scale(1.1);
+}
+
+.plan-card-title {
+  position: absolute;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5); 
+  color: white;
+  padding: 10px;
+  width: 100%;
+  text-align: justify;
+  box-sizing: border-box;
+}
+
+.card-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  display: inline-block;
+  margin: auto;
+}

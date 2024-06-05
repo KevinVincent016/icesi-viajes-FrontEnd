@@ -37,16 +37,10 @@ function Login() {
       2 = Viewer
       3 = Agente
       */
-
-      if(usuario.idRol === "1"){
+    
+      if(usuario){
         console.log('validacion: ', usuario.idRol)
         navigate('/main');
-      }else if(usuario.idRol === "2"){
-        console.log('validacion: ', usuario.idRol)
-        navigate('/mainV');
-      }else{
-        console.log('validacion: ', usuario.idRol)
-        navigate('/mainA');
       }
       
     } catch (error) {

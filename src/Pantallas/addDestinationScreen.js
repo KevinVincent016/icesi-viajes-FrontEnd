@@ -3,11 +3,23 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 function AddDestinationScreen() {
+
+  const usuarioLogeado = localStorage.getItem('token');
+  let user = null;
+
+  if (usuarioLogeado) {
+    try {
+      user = JSON.parse(usuarioLogeado);
+    } catch (error) {
+      console.error("Error parsing token:", error);
+    }
+  }
+
   const [destinationData, setDestinationData] = useState({
     nombre: '',
     descripcion: '',
     id_tide: '',
-    usuCreador: 'CLOPEZ' // Quemado mientras tenemos JWT
+    usuCreador: user.loginU
   });
 
   const [tiposDestino, setTiposDestino] = useState([]);

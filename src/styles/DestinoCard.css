@@ -1,0 +1,64 @@
+.destino-card {
+    position: relative; 
+    width: 400px;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); 
+    border: 1px solid black;
+    overflow: hidden;
+  }
+  
+  .destino-card img {
+    width: 100%;
+    height: 300px;
+  }
+  
+  .destino-details {
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); 
+    color: white;
+    padding: 10px;
+    width: 100%;
+    text-align: justify;
+  }
+  
+  .destino-details h3,
+  .destino-details p {
+    margin: 5px 0;
+  }
+  
+  .destino-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .destino-card:hover .destino-overlay {
+    opacity: 1;
+  }
+  
+  .destino-card-select-button {
+    padding: 10px 20px;
+    background-color: #FF0000; 
+    color: white;
+    border: none;
+    border-radius: 25px; 
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+    font-weight: bold;
+  }
+  
+  .destino-card-select-button:hover {
+    background-color: #FFD700; 
+    transform: scale(1.1);
+  }

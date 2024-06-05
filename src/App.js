@@ -23,9 +23,6 @@ function App() {
           <Route path="/anadir-usuarios" element={<CreateUser />} />
           <Route path="/anadir-planes" element={<AddPlanScreen />} />
           <Route path="/anadir-destinos" element={<AddDestinationScreen />} />
-
-
-
         </Routes>
       </div>
     </Router>
