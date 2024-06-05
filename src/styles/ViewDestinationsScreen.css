@@ -1,0 +1,17 @@
+.destino-title {
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 40px; 
+    margin-left: 4%; 
+  }
+  
+  .all-destinations {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .all-destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }

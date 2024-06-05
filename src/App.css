@@ -189,6 +189,13 @@
   margin-left: 4%; 
 }
 
+.bienvenida {
+  font-family: 'Montserrat', sans-serif; 
+  font-size: 35px; 
+  margin-left: 4%; 
+  margin-bottom: 5%;
+}
+
 .main-container {
   padding-top: 70px; 
   display: flex;
@@ -202,7 +209,6 @@
 
 .left-quadrant {
   flex: 1;
-  padding: 20px;
   background-color: #f0f0f0;
   width: 100%;
 }

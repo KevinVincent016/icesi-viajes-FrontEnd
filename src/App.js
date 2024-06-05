@@ -9,6 +9,8 @@ import HelpPage from './Pantallas/HelpPage';
 import CreateUser from './Pantallas/createUser';
 import AddPlanScreen from './Pantallas/addPlanScreen';
 import AddDestinationScreen from './Pantallas/addDestinationScreen';
+import ViewDestinationsScreen from './Pantallas/ViewDestinationsScreen';
+import ViewPlanScreen from './Pantallas/ViewPlanScreen';
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
           <Route path="/anadir-usuarios" element={<CreateUser />} />
           <Route path="/anadir-planes" element={<AddPlanScreen />} />
           <Route path="/anadir-destinos" element={<AddDestinationScreen />} />
+          <Route path="/ver-destinos" element={<ViewDestinationsScreen />} />
+          <Route path="/ver-planes" element={<ViewPlanScreen />} />
         </Routes>
       </div>
     </Router>

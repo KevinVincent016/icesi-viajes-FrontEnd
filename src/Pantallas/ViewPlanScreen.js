@@ -1,18 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import defaultPlanImage from '../backgroundimage.png';
 import PlanCard from '../Componentes/PlanCard';
+import '../styles/ViewPlanScreen.css';
 
-function MainScreen() {
+function ViewPlanScreen() {
 
-  const [usuario, setUsuario] = useState('');
   const [planes, setPlanes] = useState([]);
-  
-
-  useEffect(() => {
-    const user = localStorage.getItem('token');
-    console.log('Nombre de usuario desde localStorage:', JSON.parse(user));
-    setUsuario(JSON.parse(user));
-  }, []);
 
   useEffect(() => {
     fetch(`http://localhost:5430/api/planes/obtenerPlanes`)
@@ -26,14 +19,9 @@ function MainScreen() {
   return (
     <div className="main-container">
       <div className="left-quadrant">
-        <div className="bienvenida">
-          <span>Bienvenido</span>
-          <br />
-          {usuario ? usuario.nombre + " " + usuario.apellido : 'Usuario'}
-        </div>
-        <h2 className="plan-title">Planes Agregados <span className="recently">Recientemente</span></h2>
-        <div className="recent-plans">
-          <div className="recent-plans-grid">
+        <h2 className="plan-title">Todos los destinos</h2>
+        <div className="all-plans">
+          <div className="all-plans-grid">
             {planes.map(plan => (
               <PlanCard
                 key={plan.id}
@@ -50,4 +38,4 @@ function MainScreen() {
   );
 }
 
-export default MainScreen;
+export default ViewPlanScreen;

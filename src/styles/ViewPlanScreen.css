@@ -1,0 +1,17 @@
+.plan-title {
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 40px; 
+    margin-left: 4%; 
+  }
+  
+  .all-plans {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .all-plans-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
