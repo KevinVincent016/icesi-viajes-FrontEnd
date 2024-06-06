@@ -11,6 +11,9 @@ import AddPlanScreen from './Pantallas/addPlanScreen';
 import AddDestinationScreen from './Pantallas/addDestinationScreen';
 import ViewDestinationsScreen from './Pantallas/ViewDestinationsScreen';
 import ViewPlanScreen from './Pantallas/ViewPlanScreen';
+import ViewUsers from './Pantallas/ViewUsers.js';
+import ModifyUser from './Pantallas/ModifyUser.js';
+
 
 function App() {
   return (
@@ -27,6 +30,9 @@ function App() {
           <Route path="/anadir-destinos" element={<AddDestinationScreen />} />
           <Route path="/ver-destinos" element={<ViewDestinationsScreen />} />
           <Route path="/ver-planes" element={<ViewPlanScreen />} />
+          <Route path="/ver-usuarios" element={<ViewUsers />} />
+          <Route path="/modificar-usuarios/:id" element={<ModifyUser />} />
+
         </Routes>
       </div>
     </Router>

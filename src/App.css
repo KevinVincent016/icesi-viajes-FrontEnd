@@ -506,3 +506,112 @@ button[type="submit"]:hover {
   background-color: #ec1f1f; 
 }
 
+/* view users css*/
+/* ViewUsers.css */
+
+.view-users-container {
+  padding: 20px;
+}
+
+.usernamelist {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.users-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px; /* Añade espacio entre las filas */
+}
+
+.users-table th {
+  background-color: #f0ad4e;
+  color: white;
+  padding: 10px;
+  text-align: left;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  border: none;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.users-table td {
+  background-color: white;
+  padding: 10px;
+  text-align: left;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.expand-button {
+  padding: 5px 10px;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f0ad4e; /* Color amarillo de Iberia */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s; /* Agregar transición al cambio de color */
+}
+
+.expand-button:hover {
+  background: linear-gradient(45deg, #f0ad4e, #ec971f);
+  color: #fff;
+}
+
+.actions {
+  display: flex;
+  gap: 5px;
+}
+
+.action-button {
+  padding: 5px 10px;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s; /* Agregar transición al cambio de color */
+}
+
+.edit-button {
+  background-color: #5bc0de; /* Color azul claro */
+}
+
+.edit-button:hover {
+  background-color: #31b0d5; /* Azul claro más oscuro */
+}
+
+.delete-button {
+  background-color: #d9534f; /* Color rojo */
+}
+
+.delete-button:hover {
+  background-color: #c9302c; /* Rojo más oscuro */
+}
+
+.user-details {
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-details p {
+  margin: 5px 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+}

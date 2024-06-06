@@ -22,11 +22,6 @@ const DestinoCard = ({id, codigo, nombre, imageSrc }) => {
         fetchImage();
     }, [nombre]);
 
-
-    const handleClick = () => {
-        navigate(`/event/${id}`);
-    };
-
     return (
         <div className="destino-card">
         <img

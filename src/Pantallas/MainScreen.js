@@ -15,7 +15,7 @@ function MainScreen() {
   }, []);
 
   useEffect(() => {
-    fetch(`http://localhost:5430/api/planes/obtenerPlanes`)
+    fetch(`http://localhost:5430/api/planes/ultimos`)
       .then(response => response.json())
       .then(data => {
         setPlanes(data);
