@@ -1,20 +1,24 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import logo from '../image-removebg-preview (1).png';
+import CryptoJS from 'crypto-js';
 
 function Navbar() {
   const location = useLocation();
+  const secretKey = 'IcEvIaJeS';
 
   const handleLogout = (e) => {
     localStorage.removeItem('token')
   };
 
-  const token = localStorage.getItem('token');
+  const encryptedToken = localStorage.getItem('token');
   let user = null;
 
-  if (token) {
+  if (encryptedToken) {
     try {
-      user = JSON.parse(token);
+      const bytes = CryptoJS.AES.decrypt(encryptedToken, secretKey);
+      const decryptedData = bytes.toString(CryptoJS.enc.Utf8);
+      user = JSON.parse(decryptedData);
     } catch (error) {
       console.error("Error parsing token:", error);
     }
@@ -70,6 +74,14 @@ function Navbar() {
                         </div>
                       </li>
                       <li><Link to="/añadir-servicios" className="servicios">Servicios</Link></li>
+                      <li className="dropdown-parent"> 
+                      <span className="reservas">Reservas</span>
+                        <div className="submenu">
+                          <Link to="/ver-reservas" className="nav-link">Ver Reservas</Link>
+                          <Link to="/anadir-reservas" className="nav-link">Añadir Reservas</Link>
+                          <Link to="/modificar-reservas" className="nav-link">Modificar Reservas</Link>
+                        </div>
+                      </li>
                       <li><Link to="/ayuda" className="help-button">Ayuda</Link></li>
                       <li><Link to="/" className="nav-link" onClick={handleLogout}>Logout</Link></li>
                     </>
@@ -102,7 +114,14 @@ function Navbar() {
                           <Link to="/modificar-destinos" className="nav-link">Modificar Destinos</Link>
                         </div>
                       </li>
-                      
+                      <li className="dropdown-parent"> 
+                      <span className="reservas">Reservas</span>
+                        <div className="submenu">
+                          <Link to="/ver-reservas" className="nav-link">Ver Reservas</Link>
+                          <Link to="/anadir-reservas" className="nav-link">Añadir Reservas</Link>
+                          <Link to="/modificar-reservas" className="nav-link">Modificar Reservas</Link>
+                        </div>
+                      </li>
                       <li><Link to="/ayuda" className="help-button">Ayuda</Link></li>
                       <li><Link to="/" className="nav-link" onClick={handleLogout}>Logout</Link></li>
                     </>

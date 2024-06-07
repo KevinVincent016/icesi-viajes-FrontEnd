@@ -1,23 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import CryptoJS from 'crypto-js';
 
 function CreateUser() {
+  const secretKey = 'IcEvIaJeS';
   const navigate = useNavigate();
 
-  const usuarioLogeado = localStorage.getItem('token');
+  const encryptedToken = localStorage.getItem('token');
   const [userU, setUserU] = useState('');
 
   useEffect(() => {
-    if (usuarioLogeado) {
+    if (encryptedToken) {
       try {
-        const user = JSON.parse(usuarioLogeado);
+        const bytes = CryptoJS.AES.decrypt(encryptedToken, secretKey);
+        const decryptedData = bytes.toString(CryptoJS.enc.Utf8);
+        const user = JSON.parse(decryptedData);
         setUserU(user.loginU);
       } catch (error) {
         console.error("Error parsing token:", error);
       }
     }
-  }, [usuarioLogeado]);
+  }, [encryptedToken]);
 
   const rolesMap = {
     admin: 1,
@@ -80,7 +84,7 @@ function CreateUser() {
       <div style={{ flex: '1', padding: '20px', backgroundColor: '#f0f0f0' }}>
         <h2>Información Importante</h2>
         <p>Asegúrese de completar todos los campos correctamente para crear un nuevo usuario.</p>
-        <p>Elija el tipo de identificación adecuado y proporcione un correo electrónico válido.</p>
+        <p>Añada correctamente su nombre y apellido, tambien proporcione un correo electrónico válido.</p>
         <p>El rol determina el nivel de acceso del usuario dentro del sistema.</p>
       </div>
       <div style={{ flex: '1', padding: '20px', overflowY: 'auto' }}>

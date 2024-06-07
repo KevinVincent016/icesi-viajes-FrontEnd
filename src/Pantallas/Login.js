@@ -2,6 +2,9 @@ import React, {useState} from 'react';
 import { useNavigate } from 'react-router-dom'; 
 import backgroundImage from '../backgroundimage.png';
 import axios from 'axios';
+import CryptoJS from 'crypto-js';
+
+const secretKey = 'IcEvIaJeS';
 
 function Login() {
   const navigate = useNavigate(); 
@@ -28,8 +31,10 @@ function Login() {
       const response = await axios.post('http://localhost:5430/api/user/logear', loginData);
       const usuario = response.data;
       console.log('Usuario autenticado:', usuario);
+      
+      const encryptedToken = CryptoJS.AES.encrypt(JSON.stringify(usuario), secretKey).toString();
 
-      localStorage.setItem('token', JSON.stringify(usuario));
+      localStorage.setItem('token', encryptedToken);
       console.log('token: ', localStorage.getItem('token'))
       
       /*

@@ -3,22 +3,21 @@ import React, { useState } from 'react';
 function HelpPage() {
   const [faqs, setFaqs] = useState([
     {
-      question: "No se que preguntar xd",
-      answer: "Mucho menos se que responder"
+      question: "¿Cómo puedo añadir un nuevo destino?",
+      answer: "Para añadir un nuevo destino, dirígete a la sección 'Destinos' en el menú principal y selecciona 'Añadir Destinos'. Completa el formulario con la información del nuevo destino y haz clic en 'Guardar'."
     },
     {
-      question: "No se que preguntar xd",
-      answer: "Mucho menos se que responder"
+      question: "¿Cómo se modifican los datos de un usuario?",
+      answer: "Para modificar los datos de un usuario, ve a la sección 'Usuarios' en el menú principal y selecciona 'Modificar Usuarios'. Busca el usuario que deseas modificar, haz clic en 'Editar' y actualiza la información necesaria."
     },
     {
-      question: "No se que preguntar xd",
-      answer: "Mucho menos se que responder"
+      question: "¿Cómo puedo ver todas las reservas realizadas?",
+      answer: "Para ver todas las reservas realizadas, dirígete a la sección 'Reservas' en el menú principal y selecciona 'Ver Reservas'. Aquí podrás ver una lista de todas las reservas, así como detalles específicos de cada una."
     },
     {
-      question: "No se que preguntar xd",
-      answer: "Mucho menos se que responder"
-    }
-    
+      question: "¿Cómo contacto al soporte técnico?",
+      answer: "Puedes contactar al soporte técnico a través del número de teléfono +1 234 567 890 o enviando un correo electrónico a ayuda@icesiviajes.com."
+    },
   ]);
 
   const FAQItem = ({ question, answer }) => {

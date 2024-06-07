@@ -1,21 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import CryptoJS from 'crypto-js';
 
 function AñadirServicio() {
-    const usuarioLogeado = localStorage.getItem('token');
+    const secretKey = 'IcEvIaJeS';
+    const encryptedToken = localStorage.getItem('token');
     const [userU, setUserU] = useState(null);
   
     useEffect(() => {
-      if (usuarioLogeado) {
+      if (encryptedToken) {
         try {
-          const user = JSON.parse(usuarioLogeado);
+          const bytes = CryptoJS.AES.decrypt(encryptedToken, secretKey);
+          const decryptedData = bytes.toString(CryptoJS.enc.Utf8);
+          const user = JSON.parse(decryptedData);
           setUserU(user.loginU);
         } catch (error) {
           console.error("Error parsing token:", error);
         }
       }
-    }, [usuarioLogeado]);
+    }, [encryptedToken]);
   
     const [serviceData, setServiceData] = useState({
       nombre: '',

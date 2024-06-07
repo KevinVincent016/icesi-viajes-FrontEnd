@@ -112,7 +112,8 @@
 .planes,
 .destinos,
 .usuarios,
-.servicios {
+.servicios,
+.reservas {
   color: white;
   font-family: 'Montserrat', sans-serif;
   text-decoration: none;

@@ -16,6 +16,8 @@ import ModifyUser from './Pantallas/ModifyUser.js';
 import AñadirServicio from './Pantallas/añadirServicio.js';
 import PlanDetailsPage from './Pantallas/PlanDetailsPage.js';
 import DestinoDetailsPage from './Pantallas/DestinoDetailsPage.js';
+import ModifyPlans from './Pantallas/ModifyPlan.js';
+import ModifyDest from './Pantallas/ModifyDest.js';
 
 
 function App() {
@@ -39,8 +41,9 @@ function App() {
           <Route path="/añadir-servicios/" element={<AñadirServicio />} />
           <Route path="/PlanDetailsPage/:id" element={<PlanDetailsPage />} />
           <Route path="/DestinoDetailsPage/:id" element={<DestinoDetailsPage />} />
-
-
+          <Route path="/modificar-planes/:id" element={<ModifyPlans />} />
+          <Route path="/modificar-planes/" element={<ModifyPlans />} />
+          <Route path="/modificar-destinos/" element={<ModifyDest />} />
         </Routes>
       </div>
     </Router>

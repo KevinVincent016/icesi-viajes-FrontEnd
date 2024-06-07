@@ -147,8 +147,8 @@ function ModifyUser() {
       <div style={{ flex: '1', padding: '20px', backgroundColor: '#f0f0f0' }}>
         <h2>Información Importante</h2>
         <h3>Modificación de usuario</h3>
-        <p>Asegúrese de completar todos los campos correctamente para crear un nuevo usuario.</p>
-        <p>Elija el tipo de identificación adecuado y proporcione un correo electrónico válido.</p>
+        <p>En caso de ser necesario, seleccione el usuario que va a modificar en la primera casilla</p>
+        <p>Asegúrese de completar todos los campos correctamente para modificar el usuario.</p>
         <p>El rol determina el nivel de acceso del usuario dentro del sistema.</p>
       </div>
     </div>

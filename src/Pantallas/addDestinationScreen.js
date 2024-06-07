@@ -1,15 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import CryptoJS from 'crypto-js';
+
 
 function AddDestinationScreen() {
 
-  const usuarioLogeado = localStorage.getItem('token');
+  const secretKey = 'IcEvIaJeS';
+
+  const encryptedToken = localStorage.getItem('token');
   let user = null;
 
-  if (usuarioLogeado) {
+  if (encryptedToken) {
     try {
-      user = JSON.parse(usuarioLogeado);
+      const bytes = CryptoJS.AES.decrypt(encryptedToken, secretKey);
+      const decryptedData = bytes.toString(CryptoJS.enc.Utf8);
+      user = JSON.parse(decryptedData);
     } catch (error) {
       console.error("Error parsing token:", error);
     }
@@ -19,7 +25,8 @@ function AddDestinationScreen() {
     nombre: '',
     descripcion: '',
     id_tide: '',
-    usuCreador: user.loginU
+    usuCreador: user.loginU,
+    estado: 'Activo'
   });
 
   const [tiposDestino, setTiposDestino] = useState([]);
@@ -62,7 +69,7 @@ function AddDestinationScreen() {
       <div className="fixed-left">
         <h2>Información Importante</h2>
         <p>Asegúrese de completar todos los campos correctamente para crear un nuevo destino.</p>
-        <p>Proporcione el nombre y la ubicación del destino, así como una descripción detallada.</p>
+        <p>Proporcione el nombre y el tipo del destino, así como una descripción detallada.</p>
       </div>
       <div className="scrollable-right">
         <form className="create-user-form" onSubmit={handleSubmit}>

@@ -1,30 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import CryptoJS from 'crypto-js';
 
 function AddPlanScreen() {
   const navigate = useNavigate();
+  const secretKey = 'IcEvIaJeS';
 
   const [destinosDisponibles, setDestinosDisponibles] = useState([]);
   const [destinosSeleccionados, setDestinosSeleccionados] = useState([]);
   const [serviciosDisponibles, setServiciosDisponibles] = useState([]);
   const [serviciosSeleccionados, setServiciosSeleccionados] = useState([]);
 
-  const usuarioLogeado = localStorage.getItem('token');
+  const encryptedToken = localStorage.getItem('token');
   const [idUser, setIdUser] = useState('');
   const [usuarioU, setUsuarioU] = useState('');
 
   useEffect(() => {
-    if (usuarioLogeado) {
+    if (encryptedToken) {
       try {
-        const user = JSON.parse(usuarioLogeado);
+        const bytes = CryptoJS.AES.decrypt(encryptedToken, secretKey);
+        const decryptedData = bytes.toString(CryptoJS.enc.Utf8);
+        const user = JSON.parse(decryptedData);
         setIdUser(user.loginU);
         setUsuarioU(user)
       } catch (error) {
         console.error("Error parsing token:", error);
       }
     }
-  }, [usuarioLogeado]);
+  }, [encryptedToken]);
 
   const [planData, setPlanData] = useState({
     nombre: '',

@@ -44,9 +44,9 @@ const PlanDetailsPage = () => {
                         className="plan-details-image" 
                     />
                     <p>Código: {plan.codigo}</p>
-                    <p>Descripcion Solicitud: ${plan.descripcionSolicitud}</p>
-                    <p>Cantidad de personas: ${plan.cantidadPersonas}</p>
-                    <p>Valor: ${plan.valorTotal}</p>
+                    <p>Descripcion Solicitud: {plan.descripcionSolicitud}</p>
+                    <p>Cantidad de personas: {plan.cantidadPersonas}</p>
+                    <p>Valor: {plan.valorTotal}</p>
                     <p>Fecha de Solicitud: {plan.fechaSolicitud}</p>
                     <p>Fecha de Inicio de Viaje: {plan.fechaInicioViaje}</p>
                     <p>Fecha de Finalización de Viaje: {plan.fechaFinViaje}</p>

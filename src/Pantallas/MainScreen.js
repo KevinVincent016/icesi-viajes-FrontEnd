@@ -1,17 +1,23 @@
 import React, {useState, useEffect} from 'react';
 import defaultPlanImage from '../backgroundimage.png';
 import PlanCard from '../Componentes/PlanCard';
+import CryptoJS from 'crypto-js';
 
 function MainScreen() {
+
+  const secretKey = 'IcEvIaJeS';
 
   const [usuario, setUsuario] = useState('');
   const [planes, setPlanes] = useState([]);
   
 
   useEffect(() => {
-    const user = localStorage.getItem('token');
-    console.log('Nombre de usuario desde localStorage:', JSON.parse(user));
-    setUsuario(JSON.parse(user));
+    const encryptedToken = localStorage.getItem('token');
+    const bytes = CryptoJS.AES.decrypt(encryptedToken, secretKey);
+    const decryptedData = bytes.toString(CryptoJS.enc.Utf8);
+
+    console.log('Nombre de usuario desde localStorage:', JSON.parse(decryptedData));
+    setUsuario(JSON.parse(decryptedData));
   }, []);
 
   useEffect(() => {
