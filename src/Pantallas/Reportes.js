@@ -24,8 +24,8 @@ function Reportes() {
   return (
     <div>
       <h1>Reportes</h1>
-      <h2 className='tituloReporte'>Destino más popular</h2>
-      {destinoPopular && <p className='resultadoReporte'>{destinoPopular.nombre}</p>}
+      <h2 className='tituloReporte'>Destinos más populares</h2>
+      {destinoPopular && destinoPopular.map((destino, index) => <p className='resultadoReporte' key={index}>{destino.nombre}</p>)}
       <h2 className='tituloReporte'>Plan más reservado</h2>
       {planPopular && <p className='resultadoReporte'>{planPopular.nombre}</p>}
       <h2 className='tituloReporte'>Top 3 clientes con más reservas</h2>
