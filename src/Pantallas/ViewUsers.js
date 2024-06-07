@@ -18,8 +18,20 @@ function ViewUsers() {
   };
 
   const handleDelete = (id) => {
-    // Función para manejar la eliminación del usuario
-    console.log(`Delete user with id: ${id}`);
+    fetch(`http://localhost:5430/api/user/eliminar-usuario/${id}`, {
+      method: 'DELETE',
+    })
+    .then(response => {
+      if (response.ok) {
+        // Si la eliminación fue exitosa, actualiza la lista de usuarios
+        setUsuarios(prevUsuarios => prevUsuarios.filter(user => user.idUsua !== id));
+        console.log(`Usuario con ID ${id} eliminado exitosamente`);
+      } else {
+        // Si ocurrió un error al eliminar, muestra un mensaje de error
+        console.error(`Error al eliminar usuario con ID ${id}`);
+      }
+    })
+    .catch(error => console.error('Error al eliminar usuario:', error));
   };
 
   useEffect(() => {

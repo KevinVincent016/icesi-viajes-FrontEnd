@@ -13,6 +13,9 @@ import ViewDestinationsScreen from './Pantallas/ViewDestinationsScreen';
 import ViewPlanScreen from './Pantallas/ViewPlanScreen';
 import ViewUsers from './Pantallas/ViewUsers.js';
 import ModifyUser from './Pantallas/ModifyUser.js';
+import AñadirServicio from './Pantallas/añadirServicio.js';
+import PlanDetailsPage from './Pantallas/PlanDetailsPage.js';
+import DestinoDetailsPage from './Pantallas/DestinoDetailsPage.js';
 
 
 function App() {
@@ -32,6 +35,11 @@ function App() {
           <Route path="/ver-planes" element={<ViewPlanScreen />} />
           <Route path="/ver-usuarios" element={<ViewUsers />} />
           <Route path="/modificar-usuarios/:id" element={<ModifyUser />} />
+          <Route path="/modificar-usuarios/" element={<ModifyUser />} />
+          <Route path="/añadir-servicios/" element={<AñadirServicio />} />
+          <Route path="/PlanDetailsPage/:id" element={<PlanDetailsPage />} />
+          <Route path="/DestinoDetailsPage/:id" element={<DestinoDetailsPage />} />
+
 
         </Routes>
       </div>

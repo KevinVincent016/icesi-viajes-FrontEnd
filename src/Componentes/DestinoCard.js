@@ -9,6 +9,7 @@ const DestinoCard = ({id, codigo, nombre, imageSrc }) => {
     const [DestinoImage, setDestinoImage] = useState(imageSrc);
     const navigate = useNavigate();
 
+
     useEffect(() => {
         const fetchImage = async () => {
         try {
@@ -21,9 +22,14 @@ const DestinoCard = ({id, codigo, nombre, imageSrc }) => {
 
         fetchImage();
     }, [nombre]);
+    
+    const handleClick = () => {
+       
+        navigate(`/DestinoDetailsPage/${id}`); // Redirige a la página de detalles del plan
+    };
 
     return (
-        <div className="destino-card">
+        <div className="destino-card" onClick={handleClick}>
         <img
             loading="lazy"
             src={DestinoImage}

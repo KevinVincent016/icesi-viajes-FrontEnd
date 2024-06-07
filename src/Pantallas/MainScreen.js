@@ -23,6 +23,8 @@ function MainScreen() {
       .catch(error => console.error('Error fetching plans:', error));
   }, []);
 
+  console.log(planes)
+
   return (
     <div className="main-container">
       <div className="left-quadrant">
@@ -36,7 +38,8 @@ function MainScreen() {
           <div className="recent-plans-grid">
             {planes.map(plan => (
               <PlanCard
-                key={plan.id}
+                id={plan.idPlan}
+                key={plan.idPlan}
                 codigo={plan.codigo}
                 nombre={plan.nombre}
                 valor={plan.valorTotal}

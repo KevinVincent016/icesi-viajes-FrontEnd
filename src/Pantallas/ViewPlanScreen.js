@@ -19,11 +19,12 @@ function ViewPlanScreen() {
   return (
     <div className="main-container">
       <div className="left-quadrant">
-        <h2 className="plan-title">Todos los destinos</h2>
+        <h2 className="plan-title">Todos los Planes</h2>
         <div className="all-plans">
           <div className="all-plans-grid">
             {planes.map(plan => (
               <PlanCard
+                id={plan.idPlan}
                 key={plan.id}
                 codigo={plan.codigo}
                 nombre={plan.nombre}

@@ -50,7 +50,7 @@ function Navbar() {
                         <div className="submenu">
                           <Link to="/ver-usuarios" className="nav-link">Ver Usuarios</Link>
                           <Link to="/anadir-usuarios" className="nav-link">Añadir Usuarios</Link>
-                          <Link to="/modificar-usuarios" className="nav-link">Modificar Usuarios</Link>
+                          <Link to="/modificar-usuarios/" className="nav-link">Modificar Usuarios</Link>
                         </div>
                       </li>
                       <li className="dropdown-parent"> 
@@ -69,6 +69,7 @@ function Navbar() {
                           <Link to="/modificar-destinos" className="nav-link">Modificar Destinos</Link>
                         </div>
                       </li>
+                      <li><Link to="/añadir-servicios" className="servicios">Servicios</Link></li>
                       <li><Link to="/ayuda" className="help-button">Ayuda</Link></li>
                       <li><Link to="/" className="nav-link" onClick={handleLogout}>Logout</Link></li>
                     </>
@@ -101,6 +102,7 @@ function Navbar() {
                           <Link to="/modificar-destinos" className="nav-link">Modificar Destinos</Link>
                         </div>
                       </li>
+                      
                       <li><Link to="/ayuda" className="help-button">Ayuda</Link></li>
                       <li><Link to="/" className="nav-link" onClick={handleLogout}>Logout</Link></li>
                     </>

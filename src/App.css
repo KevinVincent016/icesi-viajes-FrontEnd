@@ -111,7 +111,8 @@
 .inicio,
 .planes,
 .destinos,
-.usuarios {
+.usuarios,
+.servicios {
   color: white;
   font-family: 'Montserrat', sans-serif;
   text-decoration: none;
@@ -345,19 +346,17 @@ button[type="submit"]:hover {
 }
 /* AddPlanScreen.css */
 /*AddPlanScreen.css*/
-
-.add-plan-container {
+.create-plan-container {
   display: flex;
   height: 100vh;
-  z-index: 1; 
+  z-index: 1;
 }
 
-.fixed-left {
+.fixed-left-addPlan {
   width: 45%;
   padding: 20px;
   background-color: #f0f0f0;
-  position: fixed;
-  height: 100vh;
+  height: 100%;
   overflow: auto;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
@@ -374,54 +373,91 @@ button[type="submit"]:hover {
   margin-bottom: 10px;
 }
 
-.scrollable-right {
+.scrollable-right-addPlan {
   width: 50%;
-  margin-left: 50%;
   padding: 20px;
   overflow-y: auto;
 }
 
-.add-plan-form {
+.create-plan-form {
   display: flex;
   flex-direction: column;
   padding: 20px;
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .form-group label {
-  display: block;
-  margin-bottom: 5px;
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
+  margin-bottom: 5px;
+  display: block;
 }
 
 .form-group input,
 .form-group select {
-  width: calc(100% - 20px);
-  padding: 10px;
-  font-size: 16px;
   font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-button[type="submit"] {
-  padding: 10px 20px;
-  font-size: 16px;
-  font-family: 'Montserrat', sans-serif;
+.available-destinations, .available-services {
+  max-height: 150px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.destino-item, .servicio-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+}
+
+.destino-item button, .servicio-item button {
   background-color: #f0ad4e;
-  color: #fff;
+  color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  padding: 5px 10px;
 }
 
-button[type="submit"]:hover {
+.destino-item button:hover, .servicio-item button:hover, button[type="submit"]:hover {
   background-color: #ec971f;
 }
+
+button[type="submit"] {
+  background-color: #5cb85c;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  padding: 5px 0;
+}
+
+
 /* AddDestinationScreen.css */
 
 .create-user-container {
@@ -614,4 +650,171 @@ button[type="submit"]:hover {
   margin: 5px 0;
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
+}
+
+/*css plan details*/
+.plan-details-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+
+.plan-details-container {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  max-width: 800px;
+  width: 100%;
+  margin: 20px;
+  border-top: 8px solid #C8102E; /* Borde superior rojo */
+  text-align: center; /* Centrar el contenido */
+}
+
+.plan-details-container h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #C8102E; /* Título en rojo */
+}
+
+.plan-details-container p {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #4D4D4D; /* Texto gris oscuro */
+}
+
+.plan-details-container p span {
+  font-weight: bold;
+  color: #333;
+}
+
+.plan-details-image {
+  width: 100%;
+  max-width: 500px;
+  height: 100%;
+  max-height: 500px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* Spinner for loading state */
+.plan-details-page p {
+  font-size: 20px;
+  color: #000000;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .plan-details-container {
+      padding: 20px;
+  }
+
+  .plan-details-container h2 {
+      font-size: 24px;
+  }
+
+  .plan-details-container p {
+      font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .plan-details-container {
+      padding: 15px;
+  }
+
+  .plan-details-container h2 {
+      font-size: 20px;
+  }
+
+  .plan-details-container p {
+      font-size: 14px;
+  }
+}
+/* css destino details */
+.destino-details-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px;
+  position: relative;
+}
+
+.destino-details-container {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  max-width: 800px;
+  width: 100%;
+  margin: 20px;
+  border-top: 8px solid #C8102E; /* Borde superior rojo */
+  text-align: center; /* Centrar el contenido */
+}
+
+.destino-details-container h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #C8102E; /* Título en rojo */
+}
+
+.destino-details-container p {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #4D4D4D; /* Texto gris oscuro */
+}
+
+.destino-details-container p span {
+  font-weight: bold;
+  color: #000000;
+}
+
+.destino-image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Spinner for loading state */
+.destino-details-page p {
+  font-size: 20px;
+  color: #999;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .destino-details-container {
+      padding: 20px;
+  }
+
+  .destino-details-container h2 {
+      font-size: 24px;
+  }
+
+  .destino-details-container p {
+      font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .destino-details-container {
+      padding: 15px;
+  }
+
+  .destino-details-container h2 {
+      font-size: 20px;
+  }
+
+  .destino-details-container p {
+      font-size: 14px;
+  }
 }

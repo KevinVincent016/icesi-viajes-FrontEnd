@@ -1,27 +1,46 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 function CreateUser() {
   const navigate = useNavigate();
 
+  const usuarioLogeado = localStorage.getItem('token');
+  const [userU, setUserU] = useState('');
+
+  useEffect(() => {
+    if (usuarioLogeado) {
+      try {
+        const user = JSON.parse(usuarioLogeado);
+        setUserU(user.loginU);
+      } catch (error) {
+        console.error("Error parsing token:", error);
+      }
+    }
+  }, [usuarioLogeado]);
+
   const rolesMap = {
     admin: 1,
     viewer: 2,
     agente: 3
-  };  
+  };
 
   const [userData, setUserData] = useState({
     nombre: '',
     apellido: '',
-    tipoIdentificacion: 'cedula',
-    numeroIdentificacion: '',
-    sexo: 'masculino',
     correo: '',
     loginU: '',
     passwordU: '',
     idRol: rolesMap['admin']
   });
+
+  useEffect(() => {
+    setUserData(prevData => ({
+      ...prevData,
+      usuCreador: userU,
+      usuModificador: userU
+    }));
+  }, [userU]);
 
   const [message, setMessage] = useState('');
 
@@ -38,6 +57,7 @@ function CreateUser() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(userData)
     try {
       const response = await axios.post('http://localhost:5430/api/user/crear', userData);
       console.log(response.data);
@@ -75,25 +95,6 @@ function CreateUser() {
           <div className="form-group">
             <label htmlFor="apellido">Apellido</label>
             <input type="text" id="apellido" name="apellido" value={userData.apellido} onChange={handleChange} required />
-          </div>
-          <div className="form-group">
-            <label htmlFor="tipoIdentificacion">Tipo de Identificación</label>
-            <select id="tipoIdentificacion" name="tipoIdentificacion" value={userData.tipoIdentificacion} onChange={handleChange} required>
-              <option value="cedula">Cédula</option>
-              <option value="pasaporte">Pasaporte</option>
-              <option value="tarjetaDeIdentidad">Tarjeta de Identidad</option>
-            </select>
-          </div>
-          <div className="form-group">
-            <label htmlFor="numeroIdentificacion">Número de Identificación</label>
-            <input type="text" id="numeroIdentificacion" name="numeroIdentificacion" value={userData.numeroIdentificacion} onChange={handleChange} required />
-          </div>
-          <div className="form-group">
-            <label htmlFor="sexo">Sexo</label>
-            <select id="sexo" name="sexo" value={userData.sexo} onChange={handleChange} required>
-              <option value="masculino">Masculino</option>
-              <option value="femenino">Femenino</option>
-            </select>
           </div>
           <div className="form-group">
             <label htmlFor="correo">Correo</label>

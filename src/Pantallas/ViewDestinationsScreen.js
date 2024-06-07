@@ -24,6 +24,7 @@ function ViewDestinationsScreen() {
           <div className="all-destinations-grid">
             {destinos.map(destino => (
               <DestinoCard
+                id= {destino.idDest}
                 key={destino.id}
                 codigo={destino.codigo}
                 nombre={destino.nombre}
