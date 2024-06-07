@@ -82,6 +82,7 @@ function Navbar() {
                           <Link to="/modificar-reservas" className="nav-link">Modificar Reservas</Link>
                         </div>
                       </li>
+                      <li><Link to="/reportes" className="nav-link">Reportes</Link></li>
                       <li><Link to="/ayuda" className="help-button">Ayuda</Link></li>
                       <li><Link to="/" className="nav-link" onClick={handleLogout}>Logout</Link></li>
                     </>

@@ -1,0 +1,28 @@
+/* Reportes.css */
+
+
+  /* Reportes.css */
+
+.tituloReporte {
+    font-size: 2.5em; /* Hace que los títulos sean más grandes */
+    color: #333; /* Color de texto oscuro */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra de texto para dar profundidad */
+    text-align: center; /* Centra el texto */
+    margin-bottom: 20px; /* Añade espacio debajo del título */
+  }
+  
+  .resultadoReporte {
+    font-size: 1.2em; /* Hace que el texto sea un poco más grande */
+    color: #0066cc; /* Color de texto azul */
+    background-color: #f9f9f9; /* Color de fondo claro */
+    padding: 10px; /* Añade espacio alrededor del texto */
+    border-radius: 5px; /* Redondea las esquinas del fondo */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Añade una sombra sutil alrededor del fondo */
+    margin-bottom: 10px; /* Añade espacio debajo de cada resultado */
+  }
+  
+  
+  p {
+    line-height: 1.6; /* Añade espacio entre las líneas de texto */
+  }
+

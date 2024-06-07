@@ -21,6 +21,8 @@ import ModifyDest from './Pantallas/ModifyDest.js';
 import ViewReservas from './Pantallas/ViewReservas';
 import AddReservas from './Pantallas/addReservas';
 import ModifyReservas from './Pantallas/ModifyReservas';
+import Reportes from './Pantallas/Reportes.js';
+
 
 function App() {
   return (
@@ -49,6 +51,7 @@ function App() {
           <Route path="/ver-reservas" element={<ViewReservas />} />
           <Route path="/anadir-reservas" element={<AddReservas />} />
           <Route path="/modificar-reservas" element={<ModifyReservas />} />
+          <Route path="/reportes" element={<Reportes />} />
         </Routes>
       </div>
     </Router>
