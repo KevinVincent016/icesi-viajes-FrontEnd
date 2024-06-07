@@ -819,3 +819,55 @@ button[type="submit"]:hover {
       font-size: 14px;
   }
 }
+
+/* Reportes.css */
+
+.reportes-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tituloReporte {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.destinoPopular-container,
+.planPopular-container,
+.clientesTop-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.clientesTop-container {
+  flex-direction: column;
+}
+
+.cliente-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 8px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.destino-card,
+.plan-card {
+  margin: 10px; /* Espacio entre las cartas */
+}
+
+.cliente-card h3 {
+  margin-top: 0;
+}
+
+.cliente-card p {
+  margin: 4px 0;
+}

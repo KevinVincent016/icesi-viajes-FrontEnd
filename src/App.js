@@ -18,9 +18,9 @@ import PlanDetailsPage from './Pantallas/PlanDetailsPage.js';
 import DestinoDetailsPage from './Pantallas/DestinoDetailsPage.js';
 import ModifyPlans from './Pantallas/ModifyPlan.js';
 import ModifyDest from './Pantallas/ModifyDest.js';
-import ViewReservas from './Pantallas/ViewReservas';
-import AddReservas from './Pantallas/addReservas';
-import ModifyReservas from './Pantallas/ModifyReservas';
+import ViewReservas from './Pantallas/ViewReservas.js';
+import AddReservas from './Pantallas/addReservas.js';
+import ModifyResev from './Pantallas/ModifyResev.js';
 import Reportes from './Pantallas/Reportes.js';
 
 
@@ -49,8 +49,8 @@ function App() {
           <Route path="/modificar-planes/" element={<ModifyPlans />} />
           <Route path="/modificar-destinos/" element={<ModifyDest />} />
           <Route path="/ver-reservas" element={<ViewReservas />} />
-          <Route path="/anadir-reservas" element={<AddReservas />} />
-          <Route path="/modificar-reservas" element={<ModifyReservas />} />
+          <Route path="/añadir-reservas" element={<AddReservas />} />
+          <Route path="/modificar-reservas" element={<ModifyResev />} />
           <Route path="/reportes" element={<Reportes />} />
         </Routes>
       </div>
